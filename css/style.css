@@ -1,0 +1,17 @@
+/* Common Styles */
+
+@font-face{
+    font-family: 'yekanBakh';
+    src: url("../files/font/Yekan\ Bakh.ttf");
+}
+@font-face{
+    font-family: 'yekanBakhEn';
+    src: url("../files/font/YekanBakhEN04Regular.ttf");
+}
+body{
+    font-family: yekanBakh !important;
+    font-style: normal;
+}
+a{
+    text-decoration: none;
+}
