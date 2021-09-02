@@ -21,8 +21,8 @@ class HTMLUI{
         myElement.classList.remove("active");
     }
 
-    // page scroll progress bar
-    pageScrollProgress(progressBar){
+    // access to the page scroll progress value
+    pageScrollProgressValue(){
         // access to the scroll top
         const scrollTop = document.documentElement.scrollTop;
         // access to the full height scroll bar
@@ -33,10 +33,7 @@ class HTMLUI{
         // calculateing scroll final value
         const finalScrollValue = (scrollTop) / (fullScrollHeight - scrollerHeight) * 100;
 
-        // adding scroll value to the progress bar
-        progressBar.style.width = `${finalScrollValue}%`
-
+        return finalScrollValue;
     }
-
     
 }
