@@ -8,10 +8,24 @@
     font-family: 'yekanBakhEn';
     src: url("../files/font/YekanBakhEN04Regular.ttf");
 }
+@font-face{
+    font-family: 'iranyekanlight';
+    src: url("../files/font/IRANYekanLight.ttf");
+}
+*{
+    scroll-behavior: smooth;
+}
 body{
-    font-family: yekanBakh !important;
-    font-style: normal;
+    font-family:'iranyekanlight' !important;
+    overflow-x: hidden;
 }
 a{
-    text-decoration: none;
+    text-decoration: none !important;
+    color: black !important;
+}
+.font-en{
+    font-family: yekanBakhEn !important;
+}
+.font-yekan-light{
+    font-family: 'iranyekanlight' ;
 }
