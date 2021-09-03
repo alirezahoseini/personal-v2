@@ -18,6 +18,11 @@
 body{
     font-family:'iranyekanlight' !important;
     overflow-x: hidden;
+    transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
 }
 a{
     text-decoration: none !important;

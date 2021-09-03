@@ -1,0 +1,17 @@
+
+body.dark{
+    background-color: rgb(27, 27, 27);
+    color: rgb(195, 195, 195);
+}
+
+body.dark .tw{
+    color: rgb(195, 195, 195) !important;
+}
+
+body.dark header{
+    background-color: rgb(37, 37, 37);
+}
+
+body.dark .menu-li{
+    color: rgb(195, 195, 195);
+}

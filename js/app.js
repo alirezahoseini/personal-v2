@@ -28,6 +28,9 @@ function eventlistener() {
 
     // go up button
     window.addEventListener("scroll", goUpBtn);
+
+    // dark mode switcher
+    document.querySelector("#dark-switcher").addEventListener("click", darkMode);
     
 }
 
@@ -38,6 +41,25 @@ function eventlistener() {
 
 
 // Objects
+
+// dark mode 
+function darkMode(e){
+    // access to the body
+    const body = document.querySelector("body");
+
+    // access to the switcher
+    const element = e.target;
+
+    /*
+    bodyTheme: true ===> dark theme Enable
+    bodyTheme: false ===> light theme Enable
+    */
+    // access to the body Theme
+    const bodyTheme = body.classList.contains("dark");
+
+    // enable and disable dark mode
+    htmlui.darkModeSwitcher(bodyTheme, body, element);
+}
 
 // show scroll progress bar
 function showProgress() {
@@ -58,7 +80,6 @@ function goUpBtn(){
     // access to the page scroll value
     const scrollValue = htmlui.pageScrollProgressValue();
 
-    console.log(scrollValue);
     // show and hide go up btn
     if (scrollValue > 20){
         // hidden go up button
