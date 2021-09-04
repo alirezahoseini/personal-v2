@@ -47,13 +47,13 @@ class HTMLUI {
             body.classList.add("dark");
 
             // chenge switcher icon 
-            element.style.backgroundImage = `url("./files/icons/sun.svg")`;
+            element.style.backgroundImage = `url("./files/icons/dark/sun.svg")`;
 
             // switch animate
             element.style.transform = "rotate(40deg)"
 
             // chenge icons src
-            document.querySelector("#hamberger-btn img").src = "./files/icons/drak/list.svg";
+            document.querySelector("#hamberger-btn img").src = "./files/icons/dark/list.dark.svg";
             
         } else {
             // removing dark class

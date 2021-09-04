@@ -13,5 +13,26 @@ body.dark header{
 }
 
 body.dark .menu-li{
-    color: rgb(195, 195, 195);
+    color: rgb(195, 195, 195) !important;
+}
+
+body.dark .feather-icon{
+    color: rgb(0, 119, 255) !important;
+}
+
+body.dark #menu{
+    background-color: rgb(37, 37, 37);
+}
+
+body.dark #menu a{
+    color: rgb(195, 195, 195) !important;
+}
+
+body.dark #menu .mobile-li:hover{
+    background-color: rgb(49, 49, 49);
+}
+
+body.dark #go-up{
+    background-color: rgb(37, 37, 37);
+    opacity: .7;
 }

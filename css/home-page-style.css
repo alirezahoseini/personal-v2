@@ -25,6 +25,10 @@ header h1 a:hover{
     color: black;
 }
 
+header a{
+    color: rgb(39, 39, 39);
+}
+
 .menu-li{
     margin: 0 10px;
     font-size: .9rem;
@@ -47,7 +51,7 @@ header h1 a:hover{
     border: none;
 }
 #hamberger-btn img{
-    width: 30px;
+    width: 31px;
 }
 #hamberger-bg{
     background-color: #0000000e;
@@ -92,6 +96,9 @@ header h1 a:hover{
     -o-transition: .8s;
     overflow-y: scroll;
 }
+#menu a{
+    color: rgb(46, 46, 46);
+}
 .mobile-li{
     border-bottom: none;
     padding: 5px 10px 10px 10px;
@@ -115,8 +122,8 @@ header h1 a:hover{
     visibility: visible;
     opacity: 1;
 }
-.menu-li img{
-    width: 18px;
+.menu-li i{
+    font-size: 1.2rem;
     margin-left: 15px;
 }
 /* End of hamberger menu  */
@@ -129,15 +136,15 @@ header h1 a:hover{
     width: 25px;
     height: 25px;
     background-image: url("../files/icons/moon.svg");
-    background-position: center;
-    background-size:100%;
-    background-repeat: no-repeat;
     margin-right: 14px;
-    transition: .5s;
-    -webkit-transition: .5s;
-    -moz-transition: .5s;
-    -ms-transition: .5s;
-    -o-transition: .5s;
+    transition: .4s;
+    -webkit-transition: .4s;
+    -moz-transition: .4s;
+    -ms-transition: .4s;
+    -o-transition: .4s;
+}
+#dark-switcher img{
+    width: 40px;
 }
 
 /* End of dark mode switcher button styles */
@@ -181,20 +188,21 @@ header h1 a:hover{
     height: 40px;
     visibility: hidden;
     opacity: 0;
-    transform: translateY(10px);
-    -webkit-transform: translateY(10px);
-    -moz-transform: translateY(10px);
-    -ms-transform: translateY(10px);
-    -o-transform: translateY(10px);
+    transform: translateY(100px);
+    -webkit-transform: translateY(100px);
+    -moz-transform: translateY(100px);
+    -ms-transform: translateY(100px);
+    -o-transform: translateY(100px);
 }
-#go-up img{
-    width: 20px;
+#go-up i{
+    color: white;
+    font-size: 1.5rem;
     margin-top: -5px;
-    transition: .7s;
-    -webkit-transition: .7s;
-    -moz-transition: .7s;
-    -ms-transition: .7s;
-    -o-transition: .7s;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
 }
 #go-up.active{
     opacity: .5;
@@ -208,7 +216,7 @@ header h1 a:hover{
 #go-up:hover{
     opacity: 1;
 }
-#go-up:hover img{
+#go-up:hover i{
     transform: translateY(-2px);
     -webkit-transform: translateY(-2px);
     -moz-transform: translateY(-2px);
