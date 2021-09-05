@@ -14,6 +14,10 @@ const localS = new LocalStorage();
 // Eventlistener
 eventlistener();
 function eventlistener() {
+
+    // chenge header style after 
+    document.addEventListener("scroll", chengeHeaderStyle);
+
     // show hamberger menu
     document.querySelector("#hamberger-btn").addEventListener("click", function () {
         // adding active to class list
@@ -48,6 +52,19 @@ function eventlistener() {
 
 
 // Objects
+
+// chenge header style after scroll page
+function chengeHeaderStyle(){
+    // access to the page scroll
+    const scroll = htmlui.pageScrollProgressValue();
+
+    if (scroll > 5) {
+        htmlui.addingActiveClass("header")
+    } else {
+        htmlui.removeActiveClass("header")
+    }
+
+}
 
 // set them from local storage after page loaded
 function setThemeFromLocalStorage(){
