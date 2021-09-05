@@ -36,6 +36,7 @@ class HTMLUI {
         return finalScrollValue;
     }
 
+
     // Dark mode switcher
     darkModeSwitcher(bodyTheme, body, element) {
         /*
@@ -43,6 +44,43 @@ class HTMLUI {
         bodyTheme: false ===> light theme Enable
         */
         if (bodyTheme == false) {
+            // adding dark class and enabled dark mode
+            body.classList.add("dark");
+
+            // chenge switcher icon 
+            element.style.backgroundImage = `url("./files/icons/dark/sun.svg")`;
+
+            // switch animate
+            element.style.transform = "rotate(40deg)"
+
+            // chenge icons src
+            document.querySelector("#hamberger-btn img").src = "./files/icons/dark/list.dark.svg";
+
+            // set dark theme to LocalStorage
+            localS.setItem("theme", "dark")
+            
+        } else {
+            // removing dark class
+            body.classList.remove("dark");
+
+            // chenge switcher icon 
+            element.style.backgroundImage = `url("./files/icons/moon.svg")`;
+
+            // switch animate
+            element.style.transform = "rotate(0deg)";
+
+            // chenge icons src
+            document.querySelector("#hamberger-btn img").src = "./files/icons/list.svg";
+
+            // set light theme to localStorge
+            localS.setItem("theme", "light")
+        }
+
+    }
+
+    // chenge theme after loaded page
+    setThemeFromLsAfterLoaded(theme, body, element){
+        if (theme == "dark") {
             // adding dark class and enabled dark mode
             body.classList.add("dark");
 
@@ -67,7 +105,33 @@ class HTMLUI {
 
             // chenge icons src
             document.querySelector("#hamberger-btn img").src = "./files/icons/list.svg";
-        }
 
+        }
+    }
+}
+
+
+// evrey thing in Loacal Storage
+class LocalStorage{
+ 
+    // set value in LocalStorage
+    setItem(key, value){
+        localStorage.setItem(key, value);
+    }
+
+    // access to value from localStorage
+    getItem(key){
+        return localStorage.getItem(key)
+        
+    }
+
+    // delete key in localStorage
+    removeItem(key){
+        localStorage.removeItem(key);
+    }
+
+    // clear value in LocalStorage
+    cleareAll(){
+        localStorage.clear();
     }
 }

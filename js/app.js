@@ -3,6 +3,9 @@
 // created new HTML UI
 const htmlui = new HTMLUI();
 
+// created new LocalStorage
+const localS = new LocalStorage();
+
 
 
 
@@ -29,8 +32,12 @@ function eventlistener() {
     // go up button
     window.addEventListener("scroll", goUpBtn);
 
+    // check theme from local storage value after page loaded
+    document.addEventListener("DOMContentLoaded", setThemeFromLocalStorage)
+
     // dark mode switcher
     document.querySelector("#dark-switcher").addEventListener("click", darkMode);
+
     
 }
 
@@ -42,6 +49,21 @@ function eventlistener() {
 
 // Objects
 
+// set them from local storage after page loaded
+function setThemeFromLocalStorage(){
+    // access to ls value
+    const theme = localS.getItem("theme");
+    
+    // access to the body
+    const body = document.querySelector("body");
+
+    // access to the switcher
+    const element = document.querySelector("#dark-switcher")
+
+    //set theme
+    htmlui.setThemeFromLsAfterLoaded(theme, body, element);
+}
+
 // dark mode 
 function darkMode(e){
     // access to the body
@@ -49,6 +71,9 @@ function darkMode(e){
 
     // access to the switcher
     const element = e.target;
+
+    // chenge
+    localS.setItem("theme", " ");
 
     /*
     bodyTheme: true ===> dark theme Enable
