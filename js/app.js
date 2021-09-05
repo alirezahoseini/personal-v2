@@ -30,9 +30,6 @@ function eventlistener() {
         htmlui.removeActiveClass("#hamberger-menu");
     })
 
-    // page scroll progress bar
-    window.addEventListener("scroll", showProgress);
-
     // go up button
     window.addEventListener("scroll", goUpBtn);
 
@@ -44,7 +41,6 @@ function eventlistener() {
 
     
 }
-
 
 
 
@@ -101,19 +97,6 @@ function darkMode(e){
 
     // enable and disable dark mode
     htmlui.darkModeSwitcher(bodyTheme, body, element);
-}
-
-// show scroll progress bar
-function showProgress() {
-    // access to the progress bar
-    const progressBar = document.querySelector("#progress-bar");
-
-    // active progress bar after scrolling page
-    const progressValue = htmlui.pageScrollProgressValue();
-
-    // adding scroll value to the progress bar width
-    progressBar.style.width = `${progressValue}%`;
-
 }
 
 // go to up button
