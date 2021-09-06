@@ -1,12 +1,27 @@
 /* Common Styles */
-
-@font-face{
-    font-family: 'yekanBakh';
-    src: url("../files/font/Yekan\ Bakh.ttf");
+@font-face {
+    font-family: dana;
+    src: url("../files/font/dana/dana-demibold.ttf");
+    font-weight: bold;
+    font-style: normal;
 }
-@font-face{
-    font-family: 'yekanBakhEn';
-    src: url("../files/font/YekanBakhEN04Regular.ttf");
+@font-face {
+    font-family: dana;
+    src: url("../files/font/dana/dana-extrabold.ttf");
+    font-weight: bolder;
+    font-style: normal;
+}
+@font-face {
+    font-family: dana;
+    src: url("../files/font/dana/dana-regular.ttf");
+    font-weight:normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: dana;
+    src: url("../files/font/dana/dana-light.ttf");
+    font-weight:lighter;
+    font-style: normal;
 }
 @font-face{
     font-family: 'iranyekanlight';

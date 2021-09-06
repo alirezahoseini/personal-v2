@@ -36,3 +36,12 @@ body.dark #go-up{
     background-color: rgb(37, 37, 37);
     opacity: .7;
 }
+
+/* section two : abuot */
+body.dark #discription{
+    background-color: rgb(41, 41, 41);
+}
+body.dark #discription::after{
+    border-color: grey;
+}
+/* End of section two : abuot */

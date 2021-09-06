@@ -24,6 +24,7 @@ header{
     -moz-transition: .5s;
     -ms-transition: .5s;
     -o-transition: .5s;
+    z-index: 1111;
 }
 header.active{
     background-color: white;
