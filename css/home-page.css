@@ -48,6 +48,9 @@
 /* End of section one : banner */
 
 /* section two : discription */
+#about{
+    overflow-x: hidden !important;
+}
 #discription{
     font-family: dana;
     background-color: rgb(250, 250, 250);
@@ -60,7 +63,9 @@
     line-height: 40px;
     font-weight: 600;
     max-width: 600px;
+    max-height: 250px;
     position: relative;
+    margin-bottom: 40px;
 }
 #discription::after{
     width: 100%;
@@ -77,6 +82,99 @@
     -o-border-radius: 30px;
     left: -30px;
     opacity: .1;
+}
+
+#awards{
+    background-color: white;
+    border-radius: 35px;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    -ms-border-radius: 35px;
+    -o-border-radius: 35px;
+    box-shadow: 2px 20px 50px .2px rgba(104, 104, 104, 0.041);
+    -webkit-box-shadow: 2px 20px 50px .2px rgba(104, 104, 104, 0.041);
+    -moz-box-shadow: 2px 20px 50px .2px rgba(104, 104, 104, 0.041);
+    -ms-box-shadow: 2px 20px 50px .2px rgba(104, 104, 104, 0.041);
+    -o-box-shadow: 2px 20px 50px .2px rgba(104, 104, 104, 0.041);
+    margin: 30px auto;
+    margin-top: 70px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+#awards #icon-award{
+    font-size: 2.5em;
+    color: rgb(87, 87, 87);
+    margin-top: -20px;
+    display: inline-flex;
+    background:rgb(250, 250, 250);
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    padding-bottom: 4px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    box-shadow: 2px 2px 40px .2px rgba(4, 0, 255, 0.103);
+    /* -webkit-box-shadow: 2px 20px 50px .2px rgba(104, 104, 104, 0.041);
+    -moz-box-shadow: 2px 20px 50px .2px rgba(104, 104, 104, 0.041);
+    -ms-box-shadow: 2px 20px 50px .2px rgba(104, 104, 104, 0.041);
+    -o-box-shadow: 2px 20px 50px .2px rgba(104, 104, 104, 0.041); */
+}
+
+.awards-progress{
+    height: 8px;
+    width: 95%;
+    background-color: rgb(238, 238, 238);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    margin: 20px auto;
+    direction: ltr;
+}
+.awards-progress-line{
+    height: 100%;
+    border-radius: 40px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
+}
+
+
+ #award-col .award-ill ,.award-xd , .award-wordpress , .award-css , .award-html{
+    width: 0%;
+    transition:7s ;
+    -webkit-transition:7s ;
+    -moz-transition:7s ;
+    -ms-transition:7s ;
+    -o-transition:7s ;
+}
+
+
+#award-col.show .award-html{
+   width: 84%;
+   background-color: #FE2200;
+}
+#award-col.show .award-css{
+   width: 69%;
+   background-color: #004CFE; 
+}
+#award-col.show .award-wordpress{
+   width: 75%;
+   background-color: #00A7FE; 
+}
+#award-col.show .award-ill{
+   width: 41%;
+   background-color: #00BE00; 
+}
+#award-col.show .award-xd{
+   width: 20%;
+   background-color: #B100BE; 
 }
 /* End of section two : discription */
 
@@ -96,4 +194,11 @@
         font-size: .8em;
     }
     /* End of banner */
+    /* section two : about */
+    #discription{
+        padding-bottom: 25px;
+        max-height: 800px;
+        margin-right: 0px;
+    }
+    /* End of section two : about */
 }

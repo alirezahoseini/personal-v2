@@ -36,6 +36,27 @@ class HTMLUI {
         return finalScrollValue;
     }
 
+    // access element position x,y and add custom class
+    addCustomClassToElementInShowEvent(element, customClass){
+        // access to element
+        const myElement = document.querySelector(element);
+
+        // access to element offset top + user window height / 2
+        const offset = myElement.offsetTop + (window.innerHeight / 2);
+
+        // add custom class to element after scroll
+        var myScrollFunc = function() {
+            // access to scroll y
+            let y = window.scrollY;
+            // adding class
+            if (y >= offset) {
+            myElement.classList.add(customClass);
+            }
+        };
+        
+        myScrollFunc();
+    }
+
 
     // Dark mode switcher
     darkModeSwitcher(bodyTheme, body, element) {

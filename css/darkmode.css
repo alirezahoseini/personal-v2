@@ -44,4 +44,14 @@ body.dark #discription{
 body.dark #discription::after{
     border-color: grey;
 }
+body.dark #awards{
+    background-color: rgb(34, 34, 34);
+}
+body.dark #awards #icon-award{
+    box-shadow: none;
+    background-color: rgb(41, 41, 41);
+}
+body.dark .awards-progress{
+    opacity: .6;
+}
 /* End of section two : abuot */

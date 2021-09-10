@@ -38,8 +38,6 @@ function eventlistener() {
 
     // dark mode switcher
     document.querySelector("#dark-switcher").addEventListener("click", darkMode);
-
-    
 }
 
 
