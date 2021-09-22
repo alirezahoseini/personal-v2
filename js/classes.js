@@ -123,14 +123,14 @@ class HTMLUI {
 
             // switch animate
             element.style.transform = "rotate(0deg)";
-
+            
             // chenge icons src
             document.querySelector("#hamberger-btn img").src = "./files/icons/list.svg";
-
+            
         }
     }
-}
 
+}
 
 // evrey thing in Loacal Storage
 class LocalStorage{
@@ -156,3 +156,4 @@ class LocalStorage{
         localStorage.clear();
     }
 }
+

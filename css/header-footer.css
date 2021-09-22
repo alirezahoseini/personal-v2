@@ -25,6 +25,7 @@ header{
     -ms-transition: .5s;
     -o-transition: .5s;
     z-index: 1111;
+    font-family: 'iranyekanlight';
 }
 header.active{
     background-color: white;
@@ -198,6 +199,7 @@ header a{
     -moz-transform: translateY(100px);
     -ms-transform: translateY(100px);
     -o-transform: translateY(100px);
+    z-index: 999;
 }
 #go-up i{
     color: white;

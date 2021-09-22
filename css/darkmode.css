@@ -17,7 +17,7 @@ body.dark .menu-li{
 }
 
 body.dark .feather-icon{
-    color: rgb(0, 119, 255) !important;
+    color: #0077ff !important;
 }
 
 body.dark #menu{
@@ -55,3 +55,40 @@ body.dark .awards-progress{
     opacity: .6;
 }
 /* End of section two : abuot */
+
+/* section three : work sample and carusel */
+body.dark .swiper{
+    background-color: rgb(34, 34, 34);
+}
+body.dark .swiper .swip-btn{
+    background-color: rgb(24, 24, 24);
+}
+body.dark .swip-btn::after{
+    color: rgb(214, 214, 214);
+}
+body.dark .swiper-pagination-bullet{
+    background-color: rgb(156, 156, 156);
+}
+body.dark .slide{
+    background-color: rgb(54, 54, 54);
+}
+body.dark .slide-body{
+    background-color:  rgb(54, 54, 54);
+}
+body.dark .slide .title{
+    color: rgb(211, 211, 211);
+}
+body.dark .slide .show span{
+    background-color: rgb(37, 37, 37);
+    color: whitesmoke;
+}
+body.dark .slide .show span:hover{
+    background-color: rgb(49, 44, 44);
+}
+body.dark .slide .title::before{
+    background-color: rgb(54, 54, 54);
+}
+body.dark .slide button::after{
+    opacity: .2;
+}
+/* End of section three : work sample and carusel */
