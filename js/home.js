@@ -32,6 +32,8 @@ var swiper = new Swiper(".mySwiper", {
     },
   });
 
+  // access to the contact Section
+  const contact = document.querySelector("#contact");
 
 
 
@@ -43,10 +45,10 @@ function eventlistener() {
         // show awards
         htmlUi.addCustomClassToElementInShowEvent("#award-col","show");
     });
-
 }
 
 
 
 // Objects
+
 

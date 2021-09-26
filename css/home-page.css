@@ -396,8 +396,78 @@
     opacity: .5;
 }
 /* End of custom slide */
-
 /* End of section three work samples */
+
+/* section 4 : contact me */
+#contact{
+    border: 2px dashed rgb(134, 134, 134);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    position: relative;
+}
+#contact .title{
+    font-size: 1.4em;
+    font-weight:bolder;
+    background-color: rgb(70, 70, 70);
+    display: inline-block;
+    color: white;
+    padding: 2px;
+    transform: translate(-25px, -20px);
+    -webkit-transform: translate(-25px, -20px);
+    -moz-transform: translate(-25px, -20px);
+    -ms-transform: translate(-25px, -20px);
+    -o-transform: translate(-25px, -20px);
+}
+#contact .icons{
+    flex-direction: column;;
+}
+#contact .icons .whatsapp , .email{
+    background-color: rgb(251, 251, 251);
+    width: 70%;
+    margin: 30px auto;
+    border-radius: 18px;
+    -webkit-border-radius: 18px;
+    -moz-border-radius: 18px;
+    -ms-border-radius: 18px;
+    -o-border-radius: 18px;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
+#contact .icons img{
+    width: 30%;
+    max-width:75px;
+    margin-top: -25px;
+}
+#contact .icons p{
+    margin-top: 15px;
+    font-size: 1em;
+}
+#contact .icons a{
+    color: rgb(73, 73, 73);
+}
+
+#contact .icons div:hover{
+    box-shadow: 2px 2px 35px rgba(0, 0, 0, 0.056);
+    -webkit-box-shadow: 2px 2px 35px rgba(0, 0, 0, 0.056);
+    -moz-box-shadow: 2px 2px 35px rgba(0, 0, 0, 0.056);
+    -ms-box-shadow: 2px 2px 35px rgba(0, 0, 0, 0.056);
+    -o-box-shadow: 2px 2px 35px rgba(0, 0, 0, 0.056);
+}
+#contact .icons a:hover{
+    box-shadow: 2px 2px 35px rgba(0, 0, 0, 0.056);
+    -webkit-box-shadow: 2px 2px 35px rgba(0, 0, 0, 0.056);
+    -moz-box-shadow: 2px 2px 35px rgba(0, 0, 0, 0.056);
+    -ms-box-shadow: 2px 2px 35px rgba(0, 0, 0, 0.056);
+    -o-box-shadow: 2px 2px 35px rgba(0, 0, 0, 0.056);
+}
+
+/* End of section 4 : contact me */
 
 
 

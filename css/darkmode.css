@@ -92,3 +92,14 @@ body.dark .slide button::after{
     opacity: .2;
 }
 /* End of section three : work sample and carusel */
+
+/* section 4 : contact me */
+body.dark #contact .icons .whatsapp{
+    background-color: rgb(47, 47, 47);
+    color: rgb(195, 195, 195);
+}
+body.dark #contact .icons .email{
+    background-color: rgb(47, 47, 47);
+    color: rgb(195, 195, 195);
+}
+/* End of section 4 : contact me */
