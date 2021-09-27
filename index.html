@@ -22,6 +22,11 @@
 
     <!-- container  -->
     <div class="container-fluid p-0 m-0">
+        <!-- loading -->
+        <div class="loading">
+            <div></div>
+        </div>
+        <!-- End of loading -->
         <!-- header  -->
         <header class="active d-flex align-items-center flex-row-reverse">
             <h1 class="mt-n1 mr-auto">
@@ -35,13 +40,13 @@
                 <!-- navigation for lg and upper -->
                 <div id="pc-nav" class="d-none d-lg-flex">
                     <ul class="d-flex mt-3 list-unstyled">
-                        <a href="">
+                        <a href="#work-samples">
                             <li class="menu-li">نمونه کار</li>
                         </a>
-                        <a href="">
+                        <a href="#about">
                             <li class="menu-li">درباره</li>
                         </a>
-                        <a href="">
+                        <a href="#contact">
                             <li class="menu-li">تماس با من</li>
                         </a>
                     </ul>
@@ -57,17 +62,17 @@
                         <ul class="d-flex flex-column pr-2 list-unstyled">
                             <h6 class="mt-4 mb-5 text-center">Alireza Hoseyni</h6>
                             <li class="menu-li mobile-li pb-2 my-1">
-                                <a href="#">
+                                <a href="#work-samples">
                                     <i class="feather-icon icon-folder"></i> نمونه کار
                                 </a>
                             </li>
                             <li class="menu-li mobile-li pb-2 my-1">
-                                <a href="#">
+                                <a href="#about">
                                     <i class="feather-icon icon-smile"></i> درباره
                                 </a>
                             </li>
                             <li class="menu-li mobile-li pb-2 my-1">
-                                <a href="#">
+                                <a href="#contact">
                                     <i class="feather-icon icon-message-square"></i> تماس با من
                                 </a>
                             </li>
@@ -126,6 +131,10 @@
                         <div class="awards-progress">
                             <div class="awards-progress-line award-css"></div>
                         </div>
+                        <h6 class="awards-title font-weight-bold ml-2" >JavaScript</h6>
+                        <div class="awards-progress">
+                            <div class="awards-progress-line award-js"></div>
+                        </div>
                         <h6 class="awards-title font-weight-bold ml-2" >WordPress</h6>
                         <div class="awards-progress">
                             <div class="awards-progress-line award-wordpress"></div>
@@ -144,10 +153,10 @@
             </div>
         </section>
         <!-- End of section two : about me -->
-        <!-- section three : work samples -->
-        <section id="work-samples">
+        <!-- section work samples - Projects -->
+        <section id="work-samples" class="work-samples">
             <!-- work samples title -->
-            <span id="work-samples-title" class=" font-weight-bolder h5 ">نمونه کار</span>
+            <span class="work-samples-title font-weight-bolder h5 ">پروژه ها</span>
             <!-- End of work samples title -->
         </section>
         <!-- work samples slider -->
@@ -156,58 +165,7 @@
             <div class="swiper-wrapper">
                 <!-- slide -->
                 <div class="swiper-slide">
-                    <a href="" class="slide p-0">
-                        <picture class="p-0 m-0 d-block">
-                            <img src="./files/image/home-page/20.jpg" alt="slide">
-                        </picture>
-                        <div class="slide-body">
-                            <h2 class="title text-center">
-                                پروژه طراحی سایت
-                            </h2>
-                            <button>
-                                نمایش
-                            </button>
-                        </div>
-                    </a>
-                </div>
-                <!-- slide -->
-                <!-- slide -->
-                <div class="swiper-slide">
-                    <a href="" class="slide p-0">
-                        <picture class="p-0 m-0 d-block">
-                            <img src="./files/image/home-page/10.jpg" alt="slide">
-                        </picture>
-                        <div class="slide-body">
-                            <h2 class="title text-center">
-                                پروژه طراحی سایت
-                            </h2>
-                            <button>
-                                نمایش
-                            </button>
-                        </div>
-                    </a>
-                </div>
-                <!-- slide -->
-                <!-- slide -->
-                <div class="swiper-slide">
-                    <a href="" class="slide p-0">
-                        <picture class="p-0 m-0 d-block">
-                            <img src="./files/image/home-page/20.jpg" alt="slide">
-                        </picture>
-                        <div class="slide-body">
-                            <h2 class="title text-center">
-                                پروژه طراحی سایت
-                            </h2>
-                            <button>
-                                نمایش
-                            </button>
-                        </div>
-                    </a>
-                </div>
-                <!-- slide -->
-                <!-- slide -->
-                <div class="swiper-slide">
-                    <a href="" class="slide p-0">
+                    <a href="" target="_blank" class="slide p-0">
                         <picture class="p-0 m-0 d-block">
                             <img src="./files/image/home-page/20.jpg" alt="slide">
                         </picture>
@@ -228,6 +186,41 @@
             <div class="swiper-pagination"></div>
         </div>
         <!-- End of work samples slider -->
+        <!-- End of section : work samples - Projects -->
+        <!-- section work samples - mini Js -->
+        <section class="work-samples mt-5 mb-1">
+            <!-- work samples title -->
+            <span class="work-samples-title font-weight-bolder h5 ">پروژه های JavaScript</span>
+            <!-- End of work samples title -->
+        </section>
+        <!-- work samples slider -->
+        <!-- Slider main container -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <!-- slide -->
+                <div class="swiper-slide">
+                    <a href="" target="_blank" class="slide p-0">
+                        <picture class="p-0 m-0 d-block">
+                            <img src="./files/image/home-page/20.jpg" alt="slide">
+                        </picture>
+                        <div class="slide-body">
+                            <h2 class="title text-center">
+                                پروژه طراحی سایت
+                            </h2>
+                            <button>
+                                نمایش
+                            </button>
+                        </div>
+                    </a>
+                </div>
+                <!-- slide -->
+            </div>
+            <div class="swiper-button-prev swip-btn"></div>
+            <div class="swiper-button-next swip-btn"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <!-- End of work samples slider -->
+        <!-- End of section work samples - mini Js -->
         <!-- section 4: contact me -->
         <section class="row mx-0">
             <div class="col-lg-6 text-center">
@@ -244,7 +237,7 @@
                             <img src="./files/image/home-page/whatsapp.svg" alt="whatsapp icon">
                             <p>Whatsapp</p>
                         </a>
-                        <a href="mailto:baziotir@gmail.com" class="email">
+                        <a href="mailto:baziotir@gmail.com" target="_blank" class="email">
                             <img src="./files/image/home-page/email.svg" alt="email icon" class="img-email">
                             <p>Email</p>
                         </a>
@@ -253,7 +246,35 @@
             </div>
         </section>
         <!-- End of section 4: contact me -->
-    
+        <!-- section 5: footer -->
+        <footer id="footer" class="row mx-0">
+            <div class="social col-md-6 text-center">
+                <a href="https://www.instagram.com/alir_ezahosseini/" target="_blank">
+                    <img src="./files/icons/instagram.svg" alt="instagram icon">
+                </a>
+                <a href="http://t.me/alir_ezahosseini" target="_blank">
+                    <img src="./files/icons/telegram.svg" alt="telegram icon">
+                </a>
+                <a href="https://github.com/alirezahoseini" target="_blank">
+                    <img src="./files/icons/github.svg" alt="github icon">
+                </a>
+            </div>
+            <div class="links col-md-6 text-center my-3">
+                <ul class="mx-auto">
+                    <li>
+                        <a href="">مقالات من</a>
+                    </li>
+                    <li>
+                        <a href="">همکاری با من</a>
+                    </li>
+                    <li>
+                        <a href="">نمونه کار های من</a>
+                    </li>
+                </ul>
+            </div>
+            <p class="col-12 copy text-center">طراحی با <span style="color: red;">❤</span> علیرضا حسینی</p>
+        </footer>
+        <!-- End of section 5: footer -->
         
         <!-- go up button -->
         <a href="#" class="d-flex align-items-center justify-content-center" id="go-up">

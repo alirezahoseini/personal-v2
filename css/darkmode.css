@@ -103,3 +103,9 @@ body.dark #contact .icons .email{
     color: rgb(195, 195, 195);
 }
 /* End of section 4 : contact me */
+
+/* section 5:footer */
+body.dark footer{
+    background-color: rgb(15, 15, 15);
+}
+/* End of section 5:footer */

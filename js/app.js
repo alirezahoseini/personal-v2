@@ -15,6 +15,11 @@ const localS = new LocalStorage();
 eventlistener();
 function eventlistener() {
 
+    // hidde loading 
+    document.addEventListener("DOMContentLoaded",function(){
+        document.querySelector(".loading").classList.add("hidden")
+    })
+
     // chenge header style after 
     document.addEventListener("scroll", chengeHeaderStyle);
 
@@ -34,7 +39,8 @@ function eventlistener() {
     window.addEventListener("scroll", goUpBtn);
 
     // check theme from local storage value after page loaded
-    document.addEventListener("DOMContentLoaded", setThemeFromLocalStorage)
+    document.addEventListener("DOMContentLoaded", setThemeFromLocalStorage);
+
 
     // dark mode switcher
     document.querySelector("#dark-switcher").addEventListener("click", darkMode);
@@ -74,6 +80,7 @@ function setThemeFromLocalStorage(){
     //set theme
     htmlui.setThemeFromLsAfterLoaded(theme, body, element);
 }
+
 
 // dark mode 
 function darkMode(e){

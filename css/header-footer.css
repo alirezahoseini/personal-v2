@@ -1,5 +1,34 @@
 /* Home Page Styles */
 
+/* loading */
+.loading{
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(255, 255, 255) url("../files/icons/gif/loading.gif");
+    z-index: 2000000;
+    background-size: 10%;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: visible;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    opacity: 1;
+}
+.loading.hidden{
+    visibility: hidden;
+    opacity: 0;
+}
+/* End of loading */
+
 /* header */
 header{
     background-color: white;
@@ -231,3 +260,15 @@ header a{
     -o-transform: translateY(-2px);
 }
 /* End of go up button */
+
+
+
+
+
+/* tablet style 400 - 992px  */
+@media screen and (max-width: 992px) {
+    .loading{
+        background-size: 20%;
+    }
+}
+/* End of tablet style 400 - 992px  */
