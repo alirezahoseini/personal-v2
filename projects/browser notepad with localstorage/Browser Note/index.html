@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fa-ir">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scaleble=0">
+    <title> دفترچه یادداشت مرورگر با localStorage</title>
+
+
+    <!-- Css Files -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/css-reset.css">
+    <link rel="stylesheet" href="./files/font-awsome/css/all.min.css">
+    <link rel="stylesheet" href="./files/bootstrap-rtl-4.6/bootstrap-rtl.min.css">
+    <!-- End of Css Files -->
+</head>
+<body>
+
+    <div class="container py-3 text-center">
+        <section class="row py-3">
+            <!-- title  -->
+            <div class="col-12">
+                <i class="fa fa-book fa-3x text-black-50"></i>
+                <h4 class=" font-weight-bolder mt-3">دفترچه یادداشت مرورگر با <span class="en">LocalStorage</span></h4>
+            </div>
+            <!-- End of title  -->
+            <!-- input note -->
+            <div class="section-form col-lg-6 border-right-0 border-bottom-0 border-top-0 border">
+                <!-- form -->
+                <br><br>
+                <h5 class="font-weight-bold text-muted mb-3"> <i class="fa fa-pen fa-fw fa-1x ml-2"></i> اضافه کردن یادداشت جدید</h5>
+                <form>
+                    <textarea name="note" id="note" placeholder="اینجا بنویس ..."></textarea>
+                    <button type="submit" id="saveButton">ذخیره یادداشت</button>
+                </form>
+                <!-- End of form -->
+            </div>
+            <!-- End of input note -->
+            <!-- note list  -->
+            <div class="col-md-6 mx-auto">
+                <br><br><br>
+                <h5 class="font-weight-bold text-muted mb-3"> <i class="fa fa-books fa-fw fa-1x ml-2"></i> یادداشت های من</h5>
+                <ul id="note-list"></ul>
+            </div>
+            <!-- End of note list  -->
+        </section>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="./js/app.js"></script>
+    <script src="./files/bootstrap-rtl-4.6/jquery-3.5.1.slim.min.js"></script>
+    <script src="./files/bootstrap-rtl-4.6/bootstrap.bundle.min.js"></script>
+    <!--End of  JavaScript Files -->
+    
+</body>
+</html>
