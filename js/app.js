@@ -16,7 +16,7 @@ eventlistener();
 function eventlistener() {
 
     // hidde loading 
-    document.addEventListener("DOMContentLoaded",function(){
+    window.addEventListener("load",function(){
         document.querySelector(".loading").classList.add("hidden")
     })
 
