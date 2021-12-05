@@ -193,6 +193,7 @@ header a{
     -moz-transition: .4s;
     -ms-transition: .4s;
     -o-transition: .4s;
+    cursor: pointer;
 }
 #dark-switcher img{
     width: 25px;

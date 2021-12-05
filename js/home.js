@@ -41,9 +41,19 @@ var swiper = new Swiper(".mySwiper", {
 eventlistener();
 function eventlistener() {
     // show awards progress
-    document.addEventListener("scroll", function(){
+    window.addEventListener("scroll", function(){
+      // access to to award-col position
+      const awardCol = document.getElementById('award-col');
+      const posiation = awardCol.offsetTop * 8;
+
+      console.log(posiation);
+      console.log(window.scrollY);
+      // if page scroll y > 20px 
+      if(window.scrollY > posiation){
         // show awards
+        console.log('ok');
         htmlUi.addCustomClassToElementInShowEvent("#award-col","show");
+      }
     });
 }
 
