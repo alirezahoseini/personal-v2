@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fa-ir">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 , maximum-scale=1.0">
+    <title>سیستم مدیریت بودجه ماهانه</title>
+    <!-- css files attched -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/css-reset.css">
+    <link rel="stylesheet" href="./files/bootstrap-rtl-4.6/bootstrap-rtl.min.css">
+    <link rel="stylesheet" href="./files/font-awsome/css/all.min.css">
+</head>
+<body>
+    <!-- main content -->
+    <div class="container-fluid mx-0 px-0">
+        <div id="main" class="row mx-0 px-3 my-3">
+            <div class="col-12 col-md-4 mx-auto">
+                <img src="./files/image/Budget-vector-icon.png" alt="budget icon" class="img-fluid">
+            </div>
+            <!-- take a budget form -->
+            <div class="col-12 active" id="take-budget">
+                <form novalidate class="form my-5 d-flex align-items-center justify-content-center flex-column">
+                    <h5>لطفا بودجه خود را  وارد نمایید (به تومان)</h5>
+                    <div class="err-box mt-4"></div>
+                    <input type="number" name="budget" id="budget" class="form-control w-100 mt-4 border-primary" required placeholder="مثلا 100000 تومان" minlength="5">
+
+                    <button class="btn btn-primary mt-5 mb-1 px-5" type="submit">تایید</button>
+                </form>
+            </div>
+            <!-- take a budget form -->
+            <!-- content -->
+            <div id="content" class="col-12 p-0 m-0">
+                <div class="row">
+                    <!-- new expense form -->
+                    <div class="col-lg-6">
+                        <h5 class="text-primary font-weight-bold mt-3">اینجا هزینه هاتو وارد کن</h5>
+                        <div class="err-box err-box2 mt-4">
+                        </div>
+                        <form id="expense-form" class="form" novalidate>
+                            <div class="form-group px-2 px-lg-4 text-right">
+                                <label for="expense" class=" col-form-label mt-4">عنوان هزینه</label>
+                                <input type="text" name="expense" id="expense" class="form-control" required minlength="3" placeholder="مثلا تاکسی..">
+                            </div>
+                            <div class="form-group px-2 px-lg-4 text-right">
+                                <label for="expense" class=" col-form-label mt-4">مبلغ هزینه ( به تومان )</label>
+                                <input type="number" name="amount" id="amount" class="form-control" required placeholder="مثلا 5000 تومان">
+                            </div>
+                            <button class="btn btn-primary rounded-pill px-5 my-3">ثبت</button>
+                        </form>
+                    </div>
+                    <!-- End of new expense form -->
+                    <!-- expenses list -->
+                    <div class="col-lg-6">
+                        <h5 class="text-primary font-weight-bold mt-5 mb-4 mt-lg-3">لیست هزینه های من</h5>
+                        <ul id="expense-list" class="list-unstyled"></ul>
+                        <div id="total" class="alert alert-success">کل بودجه <span></span> تومان است </div>
+                        <div id="left" class="alert alert-success"><span></span> تومان از بودجه باقی مانده است </div>
+                        <button class="btn btn-outline-danger my-4" id="clear">پاک کردن اطلاعات (ایجاد لیست جدید)</button>
+                    </div>
+                    <!-- End of expenses list -->
+                </div>
+            </div>
+            <!-- End of content -->
+        </div>
+    </div>
+    <!-- End of main content -->
+
+    <!-- scripts -->
+    <script src="./js/classes.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./files/bootstrap-rtl-4.6/jquery-3.5.1.slim.min.js"></script>
+    <script src="./files/bootstrap-rtl-4.6/bootstrap.bundle.min.js"></script>
+</body>
+</html>
