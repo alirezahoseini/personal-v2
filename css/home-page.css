@@ -147,7 +147,7 @@
 }
 
 
- #award-col .award-ill ,.award-xd , .award-wordpress , .award-css , .award-html , .award-js{
+ #award-col .award-ill ,.award-xd , .award-wordpress , .award-css , .award-git , .award-html , .award-js{
     width: 0%;
     transition:7s ;
     -webkit-transition:7s ;
@@ -162,15 +162,19 @@
    background-color: #FE2200;
 }
 #award-col.show .award-css{
-   width: 69%;
+   width: 85%;
    background-color: #004CFE; 
 }
 #award-col.show .award-js{
-   width: 36%;
+   width: 68%;
    background-color: #fed800; 
 }
+#award-col.show .award-git{
+   width: 35%;
+   background-color: #272727; 
+}
 #award-col.show .award-wordpress{
-   width: 75%;
+   width: 55%;
    background-color: #00A7FE; 
 }
 #award-col.show .award-ill{
@@ -178,7 +182,7 @@
    background-color: #00BE00; 
 }
 #award-col.show .award-xd{
-   width: 20%;
+   width: 17%;
    background-color: #B100BE; 
 }
 
