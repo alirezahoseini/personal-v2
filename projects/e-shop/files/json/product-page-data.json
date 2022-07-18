@@ -1,0 +1,54 @@
+[
+    {
+        "productId" : 261311,
+        "title" : "T-Shirt Summer Vibes",
+        "offerSale" : true,
+        "price" : 119.99,
+        "offerPrice" : 89.99,
+        "brand" : "HOUSE MY BRAND",
+        "colors" : [
+            {
+                "id" : "black",
+                "colorCode" : "#808080"
+            },
+            {
+                "id" : "cream",
+                "colorCode" : "#ffe261"
+            },
+            {
+                "id" : "blue",
+                "colorCode" : "#61b3ff"
+            },
+            {
+                "id" : "white",
+                "colorCode" : "#ffffff"
+            }
+        ],
+        "sizes" : [
+            {
+                "id" : "small",
+                "name" : "SMALL - S"
+            },
+            {
+                "id" : "medium",
+                "name" : "MEDIUM - M"
+            },
+            {
+                "id" : "large",
+                "name" : "LARGE - L"
+            }
+        ],
+        "maxQuantity" : 2,
+        "score" : {
+            "totalScore" : 4.4,
+            "commentsCounter" : 81,
+            "oneStar" : "0",
+            "twoStar" : "0",
+            "threeStar" : "12",
+            "fourStar" : "35",
+            "fiweStar" : "86"
+        },
+        "images" : ["../files/image/product-images/product-preview/pr-1.jpg", "../files/image/product-images/product-preview/pr-2.jpg", "../files/image/product-images/product-preview/pr-3.jpg", "../files/image/product-images/product-preview/pr-4.jpg", "../files/image/product-images/product-preview/pr-5.jpg", "../files/image/product-images/product-preview/pr-6.jpg"],
+        "description" : "Gray Sumer Vibes T-shirt in the uiKit line with a colorful print. <br> Made of jersey cotton. T-shirt fits prefectly with jeans, pants or shorts."
+    }
+]

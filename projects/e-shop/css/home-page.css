@@ -1,0 +1,432 @@
+.row{
+    margin: auto 0 !important;
+}
+
+
+/* header banner  */
+#header-banner{
+    min-height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#header-banner #my-slider{
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+#header-banner #my-slider .slider-wrapper{
+    width: 100%;
+    height: 100%;
+    background: #000;
+}
+#header-banner #my-slider .loading{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(177, 177, 177);
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+    opacity: 1;
+    visibility: visible;
+}
+#header-banner #my-slider .loading.hide{
+    opacity: 0;
+    visibility: hidden;
+}
+#header-banner #my-slider .loading div{
+    border-left: none;
+    border-top: none;
+    animation-name: loading;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-delay: 0;
+    font-size: 1.2em;
+    transform-origin: center center;
+}
+@keyframes loading {
+    0%{
+        transform: rotate(0);
+        -webkit-transform: rotate(0);
+        -moz-transform: rotate(0);
+        -ms-transform: rotate(0);
+        -o-transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+    }
+}
+/* End of loading  */
+
+/* slider progress  */
+#header-banner #my-slider .progrss-scroller{
+    position: absolute;
+    top: 30vh;
+    left: 5vw;
+    z-index: 150;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    font-size: .5em;
+}
+#header-banner #my-slider .slider-progress{
+    height: 25vh;
+    width: 2px;
+    background-color: rgba(255, 255, 255, 0.295);
+    position: relative;
+    margin: 5px 0;
+}
+#header-banner #my-slider .slider-progress .progress{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    transition: .3s ease-in-out;
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -ms-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+}
+/* End of slider progress  */
+#header-banner #my-slider .slider-wrapper .slide{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.7s;
+    -webkit-transition: 0.7s;
+    -moz-transition: 0.7s;
+    -ms-transition: 0.7s;
+    -o-transition: 0.7s;
+}
+#header-banner #my-slider .slider-wrapper .slide{
+    background-size: cover ;
+    background-position: center;
+}
+#header-banner #my-slider .slider-wrapper .slide::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(3, 3, 3, 0.329);
+    display: block;
+    position: absolute;
+    top: 0;
+}
+#header-banner #my-slider .slider-wrapper .slide.active{
+    opacity: 1;
+    visibility: visible;
+}
+#header-banner #my-slider .slider-wrapper .slide h2{
+    margin-top: 35vh;
+    margin-left: 10vw;
+    font-size: 40px;
+    font-weight: 700;
+    color: white;
+    max-width: 30%;
+}
+#header-banner #my-slider .slider-wrapper .slide.active h2{
+    animation-name: titleTransform;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+}
+/* slider title animation  */
+@keyframes titleTransform {
+    0%{
+        opacity: 0;
+        transform: translateX(-10%);
+        -webkit-transform: translateX(-10%);
+        -moz-transform: translateX(-10%);
+        -ms-transform: translateX(-10%);
+        -o-transform: translateX(-10%);
+}
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+    }
+}
+/* End of slider title animation  */
+#header-banner #my-slider .slider-wrapper .slide .shop-btn{
+    display: flex;
+    align-items: center;
+    z-index: 100;
+    margin-left: 10.1vw;
+    margin-bottom: 20vh;
+    transition: .4s ease-in-out;
+    -webkit-transition: .4s ease-in-out;
+    -moz-transition: .4s ease-in-out;
+    -ms-transition: .4s ease-in-out;
+    -o-transition: .4s ease-in-out;
+}
+#header-banner #my-slider .slider-wrapper .slide.active .shop-btn{
+    animation-name: titleTransform;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+}
+#header-banner #my-slider .slider-wrapper .slide .shop-btn:hover{
+    transform: translateX(5px);
+    -webkit-transform: translateX(5px);
+    -moz-transform: translateX(5px);
+    -ms-transform: translateX(5px);
+    -o-transform: translateX(5px);
+}
+#header-banner #my-slider .slider-wrapper .slide .shop-btn img{
+    width: 30px;
+    margin-right: 15px;
+}
+#header-banner #my-slider .slider-wrapper .slide .shop-btn p{
+    vertical-align: middle;
+    color: white;
+    font-size: .6em;
+    margin-top: 17px;
+}
+
+/* icons and titeles from header banner */
+#header-banner #icons{
+    background-color: white !important;
+    padding: 20px 40px;
+    border-top-right-radius: 70px;
+    width: max-content;
+    align-items: flex-start;
+    z-index: 100;
+    position: absolute;
+    bottom: 0;
+}
+#header-banner #icons div{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+#header-banner #icons div img{
+    width: 40px;
+    margin-right: 25px;
+}
+#header-banner #icons div .content-box{
+    flex-direction: column;
+}
+#header-banner #icons div .content-box h4{
+    font-size: .5em;
+    font-weight: 500;
+}
+#header-banner #icons div .content-box p{
+    font-size: .4em;
+    color: grey;
+}
+/* End of icons and titeles from header banner */
+
+/* slider navigation */
+#slider-navigaiton{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 4;
+}
+#slider-navigaiton a{
+    width: 70px;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.253);
+    margin: 20px 7px;
+    font-size: 1.6em;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s ease-in-out;
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -ms-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+}
+#slider-navigaiton a:hover{
+    color: black;
+    background-color: white;
+}
+#slider-navigaiton .prev-slide{
+    pointer-events: none;
+    opacity: .5;
+}
+/* End of slider navigation */
+/* End of header banner  */
+
+
+/* new collection section styles  */
+#new-collections img{
+    display: inline-block;
+    width: 100%;
+    position: relative;
+}
+#new-collections div{
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    margin: 10px;
+    height: 300px;
+}
+#new-collections div:nth-child(1){
+    background: url('../files/image/new collection banners/adult-black-clothes-dark-1040421.jpg');
+    background-size: cover;
+    background-position: center;
+}
+#new-collections div:nth-child(2){
+    background: url('../files/image/new collection banners/beach-black-pants-black-shirt-2001293.jpg');
+    background-size: cover;
+    background-position: center;
+}
+#new-collections div:nth-child(3){
+    background: url('../files/image/new collection banners/person-sale-sign-1785138.jpg');
+    background-size: cover;
+    background-position: center;
+}
+#new-collections div::after{
+    content: '';
+    height: 100%;
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.281);
+}
+#new-collections div a{
+    z-index: 3;
+    color: white;
+    margin-left: 5px;
+}
+#new-collections div a button{
+    background-color: white;
+    font-size: .4em;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+#new-collections div a .badge{
+    font-size: .5em;
+}
+/* End of new collection section styles  */
+
+
+/* e-shop attributes section */
+#attributes{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 40px;
+    padding-top: 0px;
+}
+#attributes .title h3{
+    margin-top: 40px;
+    margin-bottom: 70px;
+    text-align: center;
+    font-size: .7em;
+}
+#attributes .item{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+}
+#attributes .item .attribute-icon{
+    background-color: rgb(241, 241, 241);
+    width: 54px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    transition: .4s;
+    -webkit-transition: .4s;
+    -moz-transition: .4s;
+    -ms-transition: .4s;
+    -o-transition: .4s;
+} 
+#attributes .item .attribute-icon svg{
+    transition:.4s;
+    width: 27px;
+    -webkit-transition:.4s;
+    -moz-transition:.4s;
+    -ms-transition:.4s;
+    -o-transition:.4s;
+}
+#attributes .item .attribute-body{
+    display: flex;
+    flex-direction: column;
+}
+#attributes .item .attribute-body h5{
+    width: 100%;
+    margin-top: 30px;
+    font-size: .5em;
+    font-weight: 500;
+    margin-bottom: 17px;
+}
+#attributes .item .attribute-body p{
+    font-size: .5em;
+    color: grey;
+}
+#attributes .item:hover  .attribute-icon{
+    background-color: #fff3df;
+}
+#attributes .item:hover  .attribute-icon svg{
+    fill: #eb9100;
+}
+/* End of e-shop attributes section */
+
+
+
+/* tablet style */
+@media screen and (max-width: 776px) {
+    /* header banner  */
+    #header-banner #my-slider .slide h2{
+        left: 10%;
+        max-width: 50%;
+    }
+    #header-banner #my-slider .slide .shop-btn{
+        left: 10%;
+    }
+    /* End of header banner  */
+}
+/* End of tablet style */
+
+
+
+
+
+
+/* mobile style */
+@media screen and (max-width: 480px) {
+  
+}
+/* End of mobile style */

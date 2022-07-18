@@ -29,11 +29,8 @@ function eventlistener() {
         htmlui.addingActiveClass("#hamberger-menu");
     });
 
-    // hide hamberger menu
-    document.querySelector("#hamberger-bg").addEventListener("click", function () {
-        // removing active to class list
-        htmlui.removeActiveClass("#hamberger-menu");
-    })
+    // close haberger menu
+    document.addEventListener("DOMContentLoaded", menuCloser);
 
     // go up button
     window.addEventListener("scroll", goUpBtn);
@@ -120,4 +117,20 @@ function goUpBtn(){
         // show go up button
         htmlui.removeActiveClass("#go-up");
     }
+}
+
+// menu closer
+function menuCloser(){
+    // hide hamberger menu
+    document.querySelector("#hamberger-bg").addEventListener("click", function () {
+        // removing active to class list
+        htmlui.removeActiveClass("#hamberger-menu");
+    });
+
+    // access to the menu options
+    const menuOptions = document.querySelectorAll('.menu-option');
+
+    menuOptions.forEach((option)=>{
+        option.addEventListener('click', () => htmlui.removeActiveClass("#hamberger-menu"))
+    })
 }

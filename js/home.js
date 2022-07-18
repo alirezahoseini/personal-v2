@@ -46,12 +46,10 @@ function eventlistener() {
       const awardCol = document.getElementById('award-col');
       const posiation = awardCol.offsetTop * 8;
 
-      console.log(posiation);
-      console.log(window.scrollY);
       // if page scroll y > 20px 
       if(window.scrollY > posiation){
         // show awards
-        console.log('ok');
+
         htmlUi.addCustomClassToElementInShowEvent("#award-col","show");
       }
     });
