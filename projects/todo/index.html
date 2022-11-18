@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scaleble=0">
+    <!-- styles  -->
+    <link rel="stylesheet" href="./styles/css/css-reset.css">
+    <link rel="stylesheet" href="./styles/css/main-styles.css">
+    <link rel="stylesheet" href="./files/fontawsome/css/all.min.css">
+    <link rel="stylesheet" href="./files/bootstarp-4.6/bootstrap.min.css">
+    <!-- End of styles  -->
+    <title>Todo App</title>
+</head>
+<body>
+
+
+    <!-- Container start -->
+    <div class="container">
+        <audio src="./files/mp3/complete.mp3" id="complete-sound"></audio>
+        <audio src="./files/mp3/unComplete.mp3" id="unComplete-sound"></audio>
+        <audio src="./files/mp3/delete.mp3" id="delete-sound"></audio>
+
+
+        <!----------------------- 
+                Start Header 
+        ------------------------->
+        <header class="w-100 d-flex align-items-center justify-content-between py-4">
+            <h1 class="h5">Todo App.</h1>
+           <button type="button" class="d-flex align-items-center justify-content-around" id="new-task-btn">
+                <i class="fa-solid fa-plus"></i>
+                <span class="mr-2">New Task</span>
+           </button>
+        </header>
+
+        <!----------------------- 
+            Start Task Progress chart
+        ------------------------->
+        <div class="row mt-3">
+            <!-- Completed tasks  -->
+            <div class="col-lg-12 px-3 my-3">
+                <div id="progress-chart" class="task-progress d-flex align-items-center justify-content-between px-3 py-4 py-lg-4 px-lg-4">
+                    <div class="body d-flex align-items-center">
+                        <div class="icon mr-3 d-flex align-items-center justify-content-center">
+                            <i class="fa-duotone fa-calendar-check"></i>
+                        </div>
+                        <div class="tasks-counter">
+                            <p class="h6 font-weight-bold">12 Tasks</p>
+                            <span class="ml-1"> Completed </span>
+                        </div>
+                    </div>
+                    <div class="progress-circle">
+                        <div class="circle d-flex align-items-center justify-content-center" id="complated-progress">
+                            <svg>
+                                <circle cx="32" cy="32" r="32"></circle>
+                                <circle cx="32" cy="32" r="32" id="inner-line" percent="0"></circle>
+                            </svg>
+                            <div class="number">0%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- In progress tasks -->
+            <!-- <div class="col-lg-6 px-3 my-3">
+                <div id="in-progress-tasks" class="task-progress d-flex align-items-center justify-content-between px-3 py-4 py-lg-4 px-lg-4">
+                    <div class="body d-flex align-items-center">
+                        <div class="icon mr-3 d-flex align-items-center justify-content-center">
+                            <i class="fa-duotone fa-calendar-clock"></i>
+                        </div>
+                        <div class="">
+                            <p class="h6 font-weight-bold">4 Tasks</p>
+                            <span class="ml-1"> In progress </span>
+                        </div>
+                    </div>
+                    <div class="progress-circle">
+                        <div class="circle d-flex align-items-center justify-content-center" id="complated-progress">
+                            <svg>
+                                <circle cx="32" cy="32" r="32"></circle>
+                                <circle cx="32" cy="32" r="32"></circle>
+                            </svg>
+                            <div class="number">22%</div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <!----------------------- 
+            Start Task List
+        ------------------------->
+        <div class="row mt-3">
+            <div class="col-12">
+                <div id="task-list" class="px-3 p-0 py-4 p-lg-4">
+                    <!-- Start Header  -->
+                    <div class="header d-flex align-items-center justify-content-between  row">
+                        <h6 class="col-6 col-lg-3 font-weight-bold list-title">Tasks in Progress</h6>
+                        <div class="icons d-flex align-items-center justify-content-end col-4 col-lg-1">
+                            <div class="mr-4 d-flex align-items-center" id="search">
+                                <div class="">
+                                    <i class="fa-duotone fa-xmark-circle close-search"></i>
+                                    <i class="fa-duotone fa-search search-icon"></i>
+                                </div>
+                                <input type="text" name="search-input" id="search-input" placeholder="Search" class="pl-2" maxlength="30">
+                            </div>
+                            <div class="">
+                                <i class="fa-duotone fa-filter d-inline-block filter-opener"></i>
+                                <ul id="filter-box">
+                                    <li data-id="priority" class="d-flex align-items-center">
+                                        <i class="fa-duotone fa-fire mr-2"></i>
+                                        Sort by Priority
+                                    </li>
+                                    <!-- <li data-id="category" class="d-flex align-items-center">
+                                        <i class="fa-duotone fa-list-ol mr-2"></i>
+                                        Sort by Category
+                                    </li> -->
+                                    <li data-id="date" class="d-flex align-items-center active">
+                                        <i class="fa-duotone fa-clock mr-2"></i>
+                                        Sort by Date
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End of Header  -->
+                    <!-- Start List  -->
+                    <ul class="px-3 mt-5" id="list">
+                    </ul>
+                    <!-- End of List  -->
+                </div>
+            </div>
+        </div>
+        <!------------------------ 
+         Start Complete Task List
+        ------------------------->
+        <div class="row my-4">
+            <div class="col-12">
+                <div id="complete-list" class="px-3 p-0 py-4 p-lg-4">
+                    <!-- Start Header  -->
+                    <div class="header d-flex align-items-center justify-content-between  row">
+                        <h6 class="col-6 col-lg-3 font-weight-bold">Complete Tasks</h6>
+                        <!-- <div class="icons d-flex align-items-center justify-content-end col-4 col-lg-1">
+                            <i class="fa-duotone fa-search mr-4"></i>
+                            <i class="fa-duotone fa-filter d-inline-block"></i>
+                        </div> -->
+                    </div>
+                    <!-- End of Header  -->
+                    <!-- Start List  -->
+                    <ul class="px-3 mt-5">
+                    </ul>
+                    <!-- End of List  -->
+                </div>
+            </div>
+        </div>
+        <!------------------------ 
+              Start Footer
+        ------------------------->
+        <footer>
+            <div class="row mx-2 d-flex flex-column align-items-center">
+                <div class=" mx-auto d-flex align-items-center px-3 pt-3 pb2">
+                    <!-- <p class="font-weight-bold">Todo App</p> -->
+                </div>
+                <div class="d-flex ">
+                    <p class="ml-3 link">Made by <a href="http://a-hosseini.ir/" target="_blank">Alireza Hoseyni</a></p>
+                    <p class="ml-3 link">View Source Code In <a href="https://github.com/alirezahoseini/todo" target="_blank" class=" font-weight-bold">Github</a></p>
+                </div>
+            </div>
+        </footer>
+
+        <!------------------------ 
+        Start New Task Popup Button
+        ------------------------->
+        <i id="new-task-popup" class="fa-solid fa-plus hidden" title="New Task"></i>
+    </div>
+    <!-- Container End -->
+    <!------------------------ 
+        Start Add New Task Form
+    -------------------------->
+    <div id="new-task-form" class="d-flex justify-content-center align-items-md-center mx-0 px-0 w-100 h-100">
+        <div class="row w-100">
+            <form class="col-12 col-md-8 col-lg-5 mx-auto px-4 pt-3" id="created-new-task">
+                <!-- Start Header  -->
+                <div class="header text-white d-flex align-items-center justify-content-center mb-4">
+                    <p class="h5 text-dark form-title">Create a task</p>
+                    <i class="closer fa-duotone fa-xmark text-dark"></i>
+                </div>
+                <!-- End of Header  -->
+                <label for="title">Task title</label>
+                <input type="text" id="title" name="title" placeholder="Task title" class="w-100" maxlength="150">
+                <!-- Start Task Category  -->
+                <label class="mt-4 mb-2">Category:</label>
+                <div class="task-categories d-flex align-items-center">
+                </div>
+                <button type="button" id="new-category-btn" class="mt-1 ml-2 mb-3">
+                    <i class="fa-solid fa-plus"></i>
+                    <span>Add new</span>
+                </button>
+                <!-- End of Task Category  -->
+                <!-- Start Task Priority -->
+                <label class="mt-3 mb-1 d-block">
+                    Select Priority:
+                </label>
+                <div id="task-priority" class="d-flex align-items-center mb-2">
+                    <div class="priority-option my-1 mx-2">
+                        <input type="radio" name="priority" value="High" id="High">
+                        <label for="High">
+                        <span>High</span>
+                        </label>
+                    </div>
+                    <div class="priority-option my-1 mx-2">
+                        <input type="radio" name="priority" value="Medium" id="Medium">
+                        <label for="Medium">
+                        <span>Medium</span>
+                        </label>
+                    </div>
+                    <div class="priority-option my-1 mx-2">
+                        <input type="radio" name="priority" value="Low" id="Low">
+                        <label for="Low">
+                            <span>Low</span>
+                        </label>
+                    </div>
+                </div>
+                <!-- End of Task Priority  -->
+                <!-- Start Task Description -->
+                <!-- <label for="description" class="h6 text-white d-block mt-3">Description:</label>
+                <span class="text-white-50 optional">Optional</span>
+                <textarea name="description" id="description"  placeholder="Task Description..." maxlength="150" class="p-2 mt-3"></textarea>
+                End of Task Description -->
+                <button id="add-to-btn" type="submit" class="w-100 my-3 py-2">
+                    <span>Done</span>
+                </button>
+            </form>
+        </div>
+        
+        <div class="background-blur w-100 h-100 position-absolute"></div>
+    </div>
+    <!------------------------ 
+      Start Add New Category 
+    -------------------------->
+    <div id="categories-form" class="d-flex justify-content-center align-items-md-center mx-0 px-0 w-100 h-100">
+        <div class="row w-100">
+            <div class="col-12 col-md-8 col-lg-5 mx-auto px-4 pt-3" id="categories-section">
+                <!-- Start Header  -->
+                <div class="header text-white d-flex align-items-center justify-content-center mb-4">
+                    <p class="h5 text-dark">Categories</p>
+                    <i class="closer fa-duotone fa-xmark text-dark"></i>
+                </div>
+                <!-- End of Header  -->
+                <!-- Start Created new category  -->
+                <form>
+                    <label class="mb-3">Category name:</label>
+                    <div class="input-group d-flex align-items-center justify-content-between">
+                        <input type="text" name="new-category" id="new-category-input" minlength="3" maxlength="35" required placeholder="Write the Category here...">
+                    <button type="submit">Create</button>
+                    </div>
+                </form>
+                <label class="text-white mt-5">Categories:</label>
+                <ul id="category-list" class="text-white d-flex align-items-center justify-content-start flex-wrap">
+                    <!-- <li data-id="Game" class="category-option m-2 text-white d-flex align-items-center justify-content-between p-2 ">
+                        <span class="name">Game</span>
+                        <i class="fa-duotone fa-trash ml-3"></i>
+                    </li> -->
+                </ul>
+                <!-- End of Created new category  -->
+
+            </div>
+        </div>
+        <div class="background-blur w-100 h-100 position-absolute"></div>
+    </div>
+    <!----------------------- 
+        Start Message Box
+    ------------------------->
+    <div class="row m-0" id="message-box">
+    </div>
+    <!------------------------ 
+     Start Confirm Delete Box
+    ------------------------->
+    <div id="confirm-box" class="d-flex justify-content-center align-items-md-center mx-0 px-0 w-100 h-100">
+        <div class="row w-100">
+            <div id="confirm-form" class="col-12 col-md-8 col-lg-5 mx-auto px-4 pt-4 pb-5 pb-md-4 text-center">
+                <p class="font-weight-bold">Do you want Delete Task.?</p>
+                <div class="buttons d-flex align-items-center justify-content-around mt-4">
+                    <button type="button" id="remove">Yes, Remove it</button>
+                    <button type="button" id="cancel">Cancel</button>
+                </div>
+            </div>
+        </div>
+        <div class="background-blur w-100 h-100 position-absolute"></div>
+    </div>
+    <!------------------------ 
+         Undo Remove Task
+    ------------------------->
+    <div id="undo-box" class="row mx-0 px-0 w-100 h-25 d-flex align-content-end">
+        <div class="box col-10 col-lg-4 bg-light mx-auto d-flex align-items-center justify-content-between px-3 py-1 font-weight-bold">
+            <span>Task Removed</span> <button type="button" class="text-primary font-weight-bold bg-transparent border-0">UNDO</button>
+        </div>
+    </div>
+ 
+    
+    <!-- scripts -->
+    <script src="./js/html.js"></script>
+    <script src="./js/main.js"></script>
+
+</body>
+</html>

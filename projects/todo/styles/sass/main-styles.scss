@@ -1,0 +1,962 @@
+@import 'variables';
+@import 'mixins';
+
+@font-face {
+    font-family: 'myriad';
+    src: url('../../files/fonts/Myriad.ttf');
+}
+@font-face {
+    font-family: 'myriad';
+    src: url('../../files/fonts/MyriadWebBold.ttf');
+    font-weight: bold;
+}
+body{
+    font-family: 'myriad';
+    background-color: $bgDarkColor !important;
+}
+.container{
+    color: $textColor;
+    font-size: 13px !important;
+    @include  mediaMaxWidth(786px){
+        font-size: 14px;
+    }
+}
+.container.blur{
+    filter: blur(5px) ;
+    -webkit-filter: blur(5px);
+    opacity: .8;
+    position: static !important;
+}
+
+
+/*-------------------
+        Header 
+--------------------*/
+header{
+    // Childes styles 
+    #new-task-btn{
+        background-color: $bgGoldColor;
+        @include borderRadius(15px);
+        color: $bgDarkColor;
+        width: 120px;
+        font-weight: 500;
+        padding: 8px ;
+        @include transition(.3s);
+        border: 3px solid transparent;
+        @include mediaMinWidth(500px){
+            span{
+                margin-bottom: 1px;
+            }
+        }
+
+        
+
+        &:hover{
+            background-color: $bgDarkColor ;
+            border-color: $bgGoldColor;
+            color: $bgGoldColor ;
+        }
+    }
+}
+
+
+
+/*----------------------- 
+    Start Task Progress
+-------------------------*/
+.task-progress{
+    background-color: $bgSecondaryColor;
+    border-radius: 35px;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    -ms-border-radius: 35px;
+    -o-border-radius: 35px;
+
+    // Childs
+    .icon{
+        width: 60px;
+        height: 60px;
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+        -o-border-radius: 20px;
+        border:2px solid $textMuted;
+        color: $bgGoldColor;
+        font-size: 1.6em;
+    }
+    .body span{
+        font-size: .9em;
+        color: $textMuted;
+        font-weight: 400;
+    }
+    .circle{
+        width: 75px; 
+        height: 75px;
+        position: relative;
+
+
+    }
+    .circle svg{
+        width: 100%;
+        height: 100%;
+        transform: rotate(-90deg);
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+    }
+    .circle svg circle{
+        fill: none;
+        stroke-width: 8px;
+        transform: translate(4px,4px);
+        -webkit-transform: translate(4px,4px);
+        -moz-transform: translate(4px,4px);
+        -ms-transform: translate(4px,4px);
+        -o-transform: translate(4px,4px);
+        stroke: gold;
+        stroke-dasharray: 201;
+        stroke-dashoffset: 201;
+        stroke-linecap: round;
+    }
+    .circle svg circle:nth-child(1){
+        stroke-dashoffset: 0;
+        stroke: $textMuted;
+    }
+    .circle svg circle:nth-child(2){
+        // stroke-dashoffset: calc(201 - (196 * 60) / 100);
+        stroke: rgb(0, 182, 238);
+    }
+    .circle .number{
+        position: absolute;
+        font-weight: bold;
+    }
+}
+
+
+
+
+/*----------------------- 
+    Start Task List
+-------------------------*/
+#task-list{
+    background-color: $bgSecondaryColor;
+    @include borderRadius(30px);
+    font-size: .97em;
+    @include transition(.3s);
+
+    .title{
+        word-break: break-all;
+        text-transform: capitalize;
+    }
+    .list-title.hidde{
+        opacity: 0;
+        @include transition(.2s);
+    }
+    .icons i {
+        font-size: 1.2em;
+        color: rgb(255, 255, 255);
+        cursor: pointer;
+    }
+    .icons #optionBtn{
+        width: 30px;
+        height: 30px;
+        font-size: 1.5em;
+        color: rgba(255, 255, 255, 0.829);
+    }
+    .category{
+        font-size: .9em;
+        color: $textMuted;
+    }
+    .optionBox{
+        position: absolute;
+        top:  5px;
+        right: 0px;
+        background-color: rgb(53, 53, 53);
+        min-width: 100px;
+        @include borderRadius(7px);
+        @include transition(.2s);
+        z-index: 100;
+        opacity: 0;
+        visibility: hidden;
+
+        .fa-duotone{
+            font-size: .9em;
+        }
+    }
+    .optionBox.active{
+        top: 0px;
+        right: 25px;
+        opacity: 1;
+        visibility: visible;
+    }
+    .optionBox div{
+        padding: 5px 6px;
+        @include borderRadius(7px);
+        cursor: pointer;
+        &:hover{
+            background-color: rgb(32, 32, 32);
+        }
+    }
+    .priority{
+        padding: 2px 8px;
+        @include borderRadius(5px);
+        font-weight: bold;
+        font-size: .83em;
+    }
+    .priority.High{
+        background-color: rgba(255, 0, 0, 0.13);
+        color: rgb(255, 45, 45);
+    }
+    .priority.Medium{
+        background-color: rgba(255, 177, 74, 0.103);
+        color: rgb(255, 115, 0);
+    }
+    .priority.Low{
+        background-color: rgba(37, 90, 189, 0.192);
+        color: rgb(0, 157, 248);
+    } 
+}
+.checkbox-container{
+    min-width: 25px;
+    min-height: 25px;
+    border: 2px solid $textMuted;
+    @include borderRadius(8px);
+    cursor: pointer;
+    position: relative;
+
+}
+.checkbox{
+    display: inline-block;
+    opacity: 0;
+    cursor: pointer;
+}
+.checkmark{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    pointer-events: none;
+    cursor: pointer;
+    font-size: .8em;
+    color: transparent;
+    padding-left: 1px;
+    @include borderRadius(8px);
+    @include transition(.1s);
+}
+.checkbox:checked ~ label{
+    color: $textColor;
+    background-color: $bgBlueColor;
+    opacity: 1;
+}
+.list-option{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.041);
+    @include transform(translateX(0px));
+    @include transition(.4s);
+    @include borderRadius(10px);
+    background-color: $bgSecondaryColor;
+}
+.list-option.slide-up{
+    @include transform(translateY(-50px));
+    background-color: $bgSecondaryColor;
+    @include borderRadius(10px);
+}
+.list-option.remove{
+    background: linear-gradient(90deg, $bgSecondaryColor, $dangerColor);
+    @include transform(translateX(100px));
+    padding-right: 10px;
+    opacity: 0;
+    padding: 0 10px;
+}
+.list-option.undo{
+    background: linear-gradient(90deg, $bgSecondaryColor, rgba(0, 153, 255, 0.534));
+    @include transform(translateX(0px));
+    padding-right: 10px;
+    opacity: 1;
+    padding: 0 10px;
+}
+.list-option.complete{
+    background: linear-gradient(90deg, $bgSecondaryColor, $successColor);
+    @include transform(translateY(30px));
+    padding-right: 10px;
+    opacity: 0;
+    // padding: 0 10px;
+}
+.list-option.unComplete{
+    background: linear-gradient(90deg, $bgSecondaryColor, $bgDarkBlueColor);
+    @include transform(translateY(-30px));
+    // padding-right: 10px;
+    opacity: 0;
+    // padding: 0 10px;
+}
+.list-option.hidde{
+    display: none !important;
+}
+
+/*------------------------ 
+ Start Search in task list
+-------------------------*/
+#search{
+    background-color: transparent;
+    padding: 10px;
+    @include borderRadius(12px);
+    @include transition(.3s);
+
+    input{
+        background-color: transparent;
+        border: none;
+        outline: none;
+        color: white;
+        visibility: hidden;
+        width: 0px;
+        opacity: 0;
+        @include transition(all .4s );
+    }
+    .search-icon{
+        @include transition(.3s);
+    }
+    .close-search{
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        @include transition(.3s);
+        margin-top: 2px;
+    }
+}
+#search.active{
+    background-color: $bgDarkColor;
+
+    input{
+        width: 200px;
+        opacity: 1;
+        visibility: visible;
+    }
+    .close-search{
+        position: absolute;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+    }
+    .search-icon{
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+
+
+/*------------------------ 
+ Start filter in task list
+-------------------------*/
+#filter-box{
+    position: absolute;
+    top: 10px;
+    right: 45px;
+    background-color: rgb(53, 53, 53);
+    min-width: 150px;
+    z-index: 10;
+    @include borderRadius(12px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    @include transform(translate(10px , 5px));
+    @include transition(.2s);
+
+    li{
+        padding: 8px;
+        @include borderRadius(12px);
+        cursor: pointer;
+
+
+        &:hover{
+            background-color: rgb(32, 32, 32);
+        }
+    }
+    li.active{
+        background-color: rgb(78, 78, 78);
+    }
+
+}
+#filter-box.active{
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    @include transform(translate(0px , 0px));
+
+}
+
+
+/*----------------------- 
+    Start Complete Tasks
+-------------------------*/
+#complete-list{
+    background-color: $bgSecondaryColor;
+    @include borderRadius(30px);
+    font-size: .97em;
+    @include transition(.3s);
+
+
+    .list-option{
+    opacity: .6;
+    }
+    .title{
+        word-break: break-all;
+        text-transform: capitalize;
+        text-decoration: line-through;
+    }
+    .category{
+        font-size: .9em;
+        color: $textMuted;
+    }
+    .remove-btn{
+        font-size: 1.4em;
+        cursor: pointer;
+        
+        &:hover{
+            color: $dangerColor;
+        }
+    }
+    .priority{
+        padding: 2px 8px;
+        @include borderRadius(5px);
+        font-weight: bold;
+        font-size: .83em;
+    }
+    .priority.High{
+        background-color: rgba(255, 0, 0, 0.13);
+        color: rgb(255, 45, 45);
+    }
+    .priority.Medium{
+        background-color: rgba(255, 177, 74, 0.103);
+        color: rgb(255, 115, 0);
+    }
+    .priority.Low{
+        background-color: rgba(37, 90, 189, 0.192);
+        color: rgb(0, 157, 248);
+    } 
+}
+
+
+
+/*----------------------- 
+    Start Message Box
+-------------------------*/
+#message-box{
+    position: fixed;
+    top: 0;
+    right: 0;
+    @include transform(translatY(-50%));
+    width: 100%;
+    height: 100vh;
+    z-index: 25;
+    // pointer-events: none;
+    height: 25px;
+
+
+    .icon{
+        width: 30px !important;
+        height: 30px !important;
+        @include borderRadius(8px !important);
+        margin-left: 5px;
+
+        i{
+            font-size: .6em !important;
+        }
+    }
+    .message{
+        @include transform(translateY(100px));
+        @include borderRadius(14px);
+        @include transition(.2s);
+        opacity: 0;
+    }
+    .message.show{
+        @include transform(translateY(0px));
+        opacity: 1;
+    }
+    .message.hidden{
+        @include transform(translateY(-100px));
+        opacity: 0;
+    }
+    .icon{
+        width: 50px;
+        height: 50px;
+        border: 2px solid white;
+        @include borderRadius(15px);
+        font-size: 1.5em;
+    }
+    
+}
+
+
+/*----------------------- 
+    Start New Task Form
+-------------------------*/
+#new-task-form{
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    right: 0;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    @include transition(.2s);
+    font-size: 1rem;
+
+    .background-blur{
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        z-index: 0;
+    }
+}
+#new-task-form.active{
+    visibility: visible;
+    opacity: 1;
+    pointer-events: all;
+    background-color: rgba(153, 153, 153, 0);
+    form{
+        @include transform(translateY(0px));
+    }
+    #created-new-task{
+        background-color: $bgWhite;
+        @include transform(translateY(0px));
+    }
+}
+#new-task-form #created-new-task{
+    @include transform(translateY(70px));
+    @include transition(.2s);
+    @include borderRadius(25px);
+    min-height: 20vh;
+    z-index: 5;
+
+
+    .header i{
+        font-size: 1.3em;
+        cursor: pointer;
+
+        &:hover{
+            opacity: .7;
+        }
+    }
+    .header .closer{
+        position: absolute;
+        top: 20px;
+        right: 33px;
+        font-size: 1.3em;
+    }
+    input{
+        border: 0;
+        outline: none;
+    }
+    label{
+        cursor: pointer;
+        color: rgb(121, 121, 121);
+        font-weight: 500;
+    }
+    #title{
+        background-color: $grayColor;
+        color: rgb(12, 12, 12) !important;
+        @include transition(.2s);
+        border: 1px solid rgb(218, 218, 218);
+        padding: 15px;
+        @include borderRadius(15px);
+        font-size: .9em;
+        
+        
+        &:focus{
+            border-color: rgb(170, 170, 170);
+        }
+
+    }
+    .task-categories{
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    #new-category-btn{
+        background-color: transparent;
+        color: $bgWhite;
+        background-color: $bgBlueColor;
+        outline: none;
+        // border: 1px solid $bgDarkBlueColor;
+        font-size: .75em;
+        padding: 6px 10px;
+        @include borderRadius(10px);
+        @include transition(.3s);
+
+        &:hover{
+            background-color: $bgDarkBlueColor;
+            color: $textColor;
+        }
+    }
+    #add-to-btn{
+        background-color: $bgGoldColor;
+        @include borderRadius(15px);
+        border: 2px solid transparent;
+        @include transition (.3s);
+
+        &:hover{
+            border-color: $bgGoldColor;
+            background-color: $bgWhite;
+        }
+
+        i{
+            transform: translateY(1px);
+            -webkit-transform: translateY(1px);
+            -moz-transform: translateY(1px);
+            -ms-transform: translateY(1px);
+            -o-transform: translateY(1px);
+        }
+    }
+}
+.task-categories .radio-group{
+    input{
+        display: none;
+    }
+    label{
+        @include transition(.1s);
+        padding: 8px 25px;
+        background-color: $grayColor;
+        @include borderRadius(12px);
+        font-size: .8em;
+        font-weight: 700 !important;
+    }
+    input:checked ~ label{
+        background-color: $bgSecondaryColor;
+        color: white !important;
+    }
+}
+#task-priority{
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: .9em;
+    
+    input{
+        display: none;
+    }
+    label{
+        padding: 8px 25px;
+        background-color: $grayColor;
+        @include borderRadius(12px);
+        font-size: .9em;
+        font-weight: bold !important;
+        @include transition(.2s);
+    }
+    #High:checked ~ label{
+        background-color: rgb(255, 219, 219);
+        color: red;
+    }
+    #Medium:checked ~ label{
+        background-color: rgb(255, 244, 184);
+        color: rgb(255, 115, 0);
+    }
+    #Low:checked ~ label{
+        background-color: rgb(219, 219, 255);
+        color: rgb(0, 0, 248);
+
+    }
+}
+
+
+
+
+/*------------------------- 
+     Start New Category
+-------------------------*/
+#categories-form{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 15;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    @include transition(.2s);
+
+
+    .background-blur{
+        width: 100%;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        // background-color: $bgSecondary50;
+    }
+
+}
+#categories-form.active{
+    visibility: visible;
+    opacity: 1;
+    pointer-events: all;
+
+    #categories-section{
+        @include transform(translateY(0))
+    }
+    
+}
+#categories-section{
+    @include borderRadius(20px);
+    @include transform(translateY(100px));
+    @include transition(.3s);
+    z-index: 5;
+    background-color: $bgWhite;
+    min-height: 20vh;
+
+
+    .header i{
+        font-size: 1.3em;
+        cursor: pointer;
+        &:hover{
+            opacity: .7;
+        }
+    }
+    .header .closer{
+        position: absolute;
+        top: 20px;
+        right: 33px;
+        font-size: 1.3em;
+    }
+    label{
+        cursor: pointer;
+        color: rgb(121, 121, 121) !important;
+        font-weight: 450;
+    }
+    input{
+        background-color: $grayColor;
+        color: rgb(12, 12, 12) ;
+        @include transition(.2s);
+        border: 1px solid rgb(212, 212, 212);
+        padding: 15px 60px 15px 15px;
+        @include borderRadius(15px);
+        font-size: .9em;
+        width: 100%;
+        outline: none;
+        
+        
+        &:focus{
+            border-color: rgb(170, 170, 170);
+        }
+
+    }
+    form button{
+        position: absolute;
+        top: 12px;
+        right: 15px;
+        width: 80px;
+        background-color: $bgGoldColor;
+        padding: 5px;
+        margin-bottom: 3px;
+        @include borderRadius(11px);
+        @include transition(.2s);
+        font-size: .9em;
+
+        &:hover{
+            background-color: rgb(255, 166, 32);
+        }
+    }
+
+    #category-list .category-option{
+        @include borderRadius(10px);
+        background-color: $grayColor;
+        font-size: .91em;
+        color: $bgDarkColor;
+
+        i{
+            cursor: pointer;
+            color: rgb(255, 79, 79);
+
+            &:hover{
+                color: rgb(235, 17, 17);
+            }
+        }
+    }
+}
+
+
+/*------------------------- 
+ Start Confirm Delete Box
+-------------------------*/
+#confirm-box{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 15;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    @include transition(.2s);
+
+    .background-blur{
+        width: 100%;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        // background-color: $bgSecondary50;
+    }
+}
+#confirm-box.active{
+    visibility: visible;
+    opacity: 1;
+    pointer-events: all;
+
+    #confirm-form{
+        @include transform(translateY(0))
+    }
+    
+}
+#confirm-box #confirm-form{
+    @include borderRadius(20px);
+    @include transform(translateY(100px));
+    @include transition(.3s);
+    z-index: 5;
+    background-color: $bgWhite;
+    min-height: 20vh;
+    
+    p{
+        font-size: 1.2em;
+    }
+    button{
+        color: $bgDarkColor;
+        padding: 5px 15px;
+        @include borderRadius(10px);
+        @include transition(.3s);
+    }
+    #cancel{
+        background-color: $bgGoldColor;
+
+        &:hover{
+            background-color: $bgSecondary50;
+        }
+    }
+    #remove{
+        color: $bgDarkColor;
+        background-color: $grayColor;
+
+        &:hover{
+            background-color: $dangerColor;
+            color: $textColor;
+        }
+    }
+}
+
+
+
+/*------------------------- 
+  Start Undo Remove Task
+-------------------------*/
+#undo-box{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    @include transition(.5s);
+
+    
+    .box{
+        height: 50px;
+        background-color: $bgSecondaryColor;
+        @include borderRadius(17px);
+        @include transform(translateY(0px));
+        @include transition(.3s);
+        opacity: 0;
+    }
+}
+#undo-box.active{
+    visibility: visible;
+    opacity: 1;
+    pointer-events: all;
+
+    .box{
+        @include transform(translateY(-70px));
+        opacity: 1;
+    }
+}
+
+
+/*------------------------- 
+  Start New Task Popup Button
+-------------------------*/
+#new-task-popup{
+    background-color: $bgGoldColor;
+    width: 45px;
+    height: 45px;
+    position: fixed;
+    right: 30px;
+    bottom: 40px;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include borderRadius(10px);
+    cursor: pointer;
+    border: 2px solid $bgGoldColor;
+    @include transition(.3s);
+
+    &:hover{
+        background-color: $bgDarkColor;
+        color: $bgGoldColor;
+    }
+}
+#new-task-popup.hidden{
+    @include transform(translateY(200px));
+}
+
+
+
+/*------------------------- 
+        Start Footer
+-------------------------*/
+footer{
+    font-size: 1em;
+    .row{
+        background-color: $bgSecondaryColor;
+        @include borderRadius(20px 20px 0 0)
+    }
+    .link{
+        font-size: .95em;
+        opacity: .9;
+    }
+}
+
+
+/*------------------------------------------ 
+ * * * * * * * *  Mobile Styles * * * * * * 
+------------------------------------------*/
+@include mediaMaxWidth(768px){
+    #new-task-form{
+        font-size: .9em;
+    }
+    #created-new-task{
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        @include borderRadius(40px 40px 0px 0px !important);
+    }
+    #categories-form{
+        font-size: .9em;
+        bottom: 0;
+    }
+    #categories-section{
+        @include borderRadius(40px 40px 0 0 !important);
+        min-height:20vh ;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+    }
+    #confirm-form{
+        @include borderRadius(40px 40px 0 0 !important);
+        min-height:20vh ;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+    }
+    #search.active{
+        input{
+            width: 150px;
+        }
+    }
+}
