@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scaleble=0">
+    <meta name="theme-color" content="#ffffff" id="browserSearchBoxColor"/>
+    <title>Music Player</title>
+
+
+    <!-- Styles  -->
+    <link rel="stylesheet" href="./files/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="./files/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="./files/fontawesome/css/regular.min.css">
+    <link rel="stylesheet" href="./files/fontawesome/css/light.min.css">
+    <link rel="stylesheet" href="./files/fontawesome/css/solid.min.css">
+    <link rel="stylesheet" href="./css/player and playlist.css">
+    <link rel="stylesheet" href="./css/css-reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/dark-mode.css">
+    <!-- Styles  -->
+</head>
+<body class="">
+    <audio src="./musics/DayFox - Saeng You.mp3" id="audio" repeat="false" random="false"></audio>
+    <div class="container px-0 overflow-hidden">
+        <div class="row mx-0 px-0">
+            <div class=" background-area col-11 col-lg-11 mx-auto py-0">
+                <!-- loading -->
+                <div id='loading' class="">
+                    <img src="./images/loading-blue.gif">
+                </div>
+                <!-- loading -->
+                <!-- favorites list  -->
+                <div id="favorites-list" class="">
+                    <div class="favotites-header">
+                        <h4>My Favorites</h4>
+                        <i class="fa-regular fa-xmark close"></i>
+                    </div>
+                    <ul>
+                    </ul>
+                </div>
+                <!-- End of favorites list  -->
+                <!-- volume  -->
+                <div id="volume-box" class="">
+                    <div id="volume-bg"></div>
+                    <div>
+                        <div id="volume-range">
+                            <i class="fa-light fa-volume-high" id="volume-icon"></i>
+                            <input type="range" name="volume" step="1" value="100" id="volume">
+                            <div id="volume-fill"></div>
+                            <span id="volume-num">100</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of volume  -->
+                <!-- message box -->
+                <div id="message-box">
+                </div>
+                <!-- End of message box -->
+                <div class="bg-blur"></div>
+                <!-- header -->
+                <div class="header">
+                    <!-- quick menu  -->
+                    <div id="quick-menu">
+                        <div id="quick-bg" class="quick-bg"></div>
+                        <ul class="ul">
+                            <li id="openFavoritesList">
+                                <i class="fa-regular fa-heart"></i>
+                                My Favorites
+                            </li>
+                            <li id="switch-theme-btn">
+                                <i class="fa-regular fa-moon"></i>
+                                <span>Dark Mode</span>
+                            </li>
+                            <li>
+                                <a id='download' href="./musics/DayFox - Saeng You.mp3" target="_blank" download="Saeng You - DayFox.mp3">
+                                    <i class="fa-solid fa-arrow-down-to-arc"></i>
+                                    Download This music
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- End of quick menu  -->
+                    <div id="quick-menu-btn">
+                        <div class="one"></div>
+                        <div class="two"></div>
+                        <div class="three"></div>
+                    </div>
+                    <p>Now Playing</p>
+                    <i  id="playlist-btn" class="fa-regular fa-angle-down"></i>
+                </div>
+                <!-- End of header -->
+                <div id="player" song-id="0" favorits="false">
+                    <!-- Player Body  -->
+                    <div id="player-body">
+                        <div class="cover">
+                            <img src="./images/DayFox-Saeng-You.jpg">
+                        </div>
+                        <h2 class="song-name">Saeng You</h2>
+                        <h3 class="artist-name">DayFox</h3>
+                    </div>
+                    <!-- End of Player Body  -->
+                    <!-- controls  -->
+                    <div class="controls w-100 px-0">
+                        <!-- Time Line  -->
+                        <div id="time-line-area" class="mx-auto">
+                            <div id="timline-range">
+                                <div id="timeline-fill"></div>
+                                <input type="range" name="timline" step='0.1' id="timeline">
+                            </div>
+                            <div class="times">
+                                <div class="current-time">0:00</div>
+                                <div class="duration">0:00</div>
+                            </div>
+                        </div>
+                        <!-- End of Time Line  -->
+                        <!-- Control Buttons  -->
+                        <div id="control-buttons">
+                            <div class="prev" title="Prev music">
+                                <i class="fa-solid fa-backward-step"></i>
+                            </div>
+                            <div class="play-pause play" title="play and pause">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                            <div class="next" title="Next music">
+                                <i class="fa-solid fa-forward-step"></i>
+                            </div>
+                        </div>
+                        <!-- End of Control Buttons  -->
+                        <!-- More Buttons  -->
+                        <div id="more-buttons">
+                            <div class="repeat-song" title="Repeat this Music">
+                                <i class="fa-light fa-arrow-rotate-right fa-rotate-270"></i>
+                            </div>
+                            <div id="volume-btn">
+                                <i class="fa-light fa-volume-up"></i>
+                            </div>
+                            <div class="add-favorits" title="Add to my favorites">
+                                <i class="fa-light fa-heart"></i>
+                            </div>
+                            <div class="random-song" title="Play random Music">
+                                <i class="fa-light fa-shuffle"></i>
+                            </div>
+                        </div>
+                        <!-- End of More Buttons  -->
+                    </div>
+                    <!-- End of controls  -->
+                </div>
+                <!-- End of player -->
+                <!-- play list  -->
+                <div id="playlist" class="">
+                    <div class="playlist-header">
+                        <i class="back fa-regular fa-xmark"></i>
+                        <h2>Playlist</h2>
+                    </div>
+                    <!-- list -->
+                    <div class="list">
+                        <ul>
+                            
+                        </ul>
+                    </div>
+                    <!-- End of list -->
+                    <!-- mini player  -->
+                    <div class="mini-player">
+                        <!-- player body -->
+                        <div class="mini-player-body">
+                            <div class="cover">
+                                <img src="./images/DayFox-Saeng-You.jpg">
+                            </div>
+                            <div class="info">
+                                <h2 class="song-name">Saeng You</h2>
+                                <h3 class="artist-name">DayFox</h3>
+                            </div>
+                        </div>
+                        <!-- End of player body -->
+                        <!-- controls  -->
+                        <div class="controls">
+                            <div class="perv-song">
+                                <i class="fa-solid fa-backward-step"></i>
+                            </div>
+                            <div class="play-pause-btn play">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                            <div class="next-song">
+                                <i class="fa-solid fa-forward-step"></i>
+                            </div>
+                        </div>
+                        <!-- End of controls  -->
+                    </div>
+                    <!-- End of mini player  -->
+                </div>
+                <!-- End of play list  -->
+                <!-- choose theme box  -->
+                <div id="choose-theme-box" class="">
+                    <div id="box">
+                        <p>Choose Player Theme:</p>
+                        <div class="input-group">
+                            <input type="radio" name="theme" id="dark" value="dark">
+                            <label for="dark">
+                                <i class="fa-regular fa-moon"></i>
+                                Dark
+                            </label>
+                        </div>
+                        <div class="input-group">
+                            <input type="radio" name="theme" id="light" value="dark">
+                            <label for="light">
+                                <i class="fa-regular fa-sun-bright"></i>
+                                Light
+                            </label>
+                        </div>
+                        <div class="input-group">
+                            <input type="radio" name="theme" id="system" value="dark">
+                            <label for="system">
+                                <i class="fa-regular fa-mobile"></i>
+                                System
+                            </label>
+                        </div>
+                    </div>
+                    <div id="background"></div>
+                </div>
+                <!-- End of choose theme box  -->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Scripts  -->
+    <script src="./js/favorites.js"></script>
+    <script src="./js/playlist.js"></script>
+    <script src="./js/setTheme.js"></script>
+    <script src="./js/message.js"></script>
+    <script src="./js/slider.js"></script>
+    <script src="./js/player.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./files/bootstrap/jquery-3.5.1.slim.min.js"></script>
+    <script src="./files/bootstrap/bootstrap.bundle.min.js"></script>
+    <!-- Scripts  -->
+</body>
+</html>

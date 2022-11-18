@@ -1,0 +1,37 @@
+[
+    {
+        "name" : "Saeng You",
+        "artist" : "DayFox",
+        "cover" : "./images/DayFox-Saeng-You.jpg",
+        "song" : "./musics/DayFox - Saeng You.mp3",
+        "favorites" : false
+    } ,
+    {
+        "name" : "Red Lantern",
+        "artist" : "Lux Inspira",
+        "cover" : "./images/Red-Lantern.jpg",
+        "song" : "./musics/Lux-Inspira - Red Lantern.mp3",
+        "favorites" : false
+    },
+    {
+        "name" : "Refresh",
+        "artist" : "Roa",
+        "cover" : "./images/Roa-Refresh.jpg",
+        "song" : "./musics/Roa - Refresh.mp3",
+        "favorites" : false
+    },
+    {
+        "name" : "Flowers",
+        "artist" : "Scandinavianz ",
+        "cover" : "./images/Scandinavianz-Flowers.jpg",
+        "song" : "./musics/Scandinavianz - Flowers.mp3",
+        "favorites" : false
+    },
+    {
+        "name" : "Pixel Party",
+        "artist" : "Vexento",
+        "cover" : "./images/pixel-party-vexento.jpg",
+        "song" : "./musics/Vexento - Pixel Party .mp3",
+        "favorites" : false
+    }
+]
