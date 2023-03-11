@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "./static/css/main.641ad13f.css",
+    "main.js": "./static/js/main.6e39527f.js",
+    "static/media/iconly.svg?1659979445868": "./static/media/iconly.9542bad49e7379a0455e.svg",
+    "static/media/Shabnam-Light-FD.eot": "./static/media/Shabnam-Light-FD.f37f97a839562ba811af.eot",
+    "static/media/Shabnam-Light-FD.ttf": "./static/media/Shabnam-Light-FD.58e9bc48d536c186692d.ttf",
+    "static/media/Shabnam-Bold-FD.eot": "./static/media/Shabnam-Bold-FD.60ed1f58a96afb7a636d.eot",
+    "static/media/Shabnam-Bold-FD.ttf": "./static/media/Shabnam-Bold-FD.e91a5fbf442b459d4106.ttf",
+    "static/media/Shabnam-FD.eot": "./static/media/Shabnam-FD.3444723b8fb2fdfcd03b.eot",
+    "static/media/Shabnam-FD.ttf": "./static/media/Shabnam-FD.d69bea8222138b7c407f.ttf",
+    "static/media/Shabnam-Light-FD.woff": "./static/media/Shabnam-Light-FD.e0cda49e5953e61fef62.woff",
+    "static/media/iconly.eot": "./static/media/iconly.61578ba9e35a14da0eff.eot",
+    "static/media/iconly.ttf?1659979445868": "./static/media/iconly.92263b49d4a52485ad15.ttf",
+    "static/media/Shabnam-Bold-FD.woff": "./static/media/Shabnam-Bold-FD.6a59ad761027a4371e5d.woff",
+    "static/media/Shabnam-Light-FD.woff2": "./static/media/Shabnam-Light-FD.70c01a04d5591a5e058b.woff2",
+    "static/media/Shabnam-FD.woff": "./static/media/Shabnam-FD.344e269e7617879adb4b.woff",
+    "static/media/element.svg": "./static/media/element.0a53599baabd5eded645.svg",
+    "static/media/Shabnam-Bold-FD.woff2": "./static/media/Shabnam-Bold-FD.7cff57705d5ab8e2ee7c.woff2",
+    "static/media/Shabnam-FD.woff2": "./static/media/Shabnam-FD.2f9e90216eac8f7b0f19.woff2",
+    "static/media/iconly.woff?1659979445868": "./static/media/iconly.fd64a1ec0fe0b536b64e.woff",
+    "static/media/iconly.woff2?1659979445868": "./static/media/iconly.eb3a3dc2b4cf6cc628fd.woff2",
+    "static/media/overlay-bg.svg": "./static/media/overlay-bg.417bdd6189e56f278bbc.svg",
+    "index.html": "./index.html",
+    "main.641ad13f.css.map": "./static/css/main.641ad13f.css.map",
+    "main.6e39527f.js.map": "./static/js/main.6e39527f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.641ad13f.css",
+    "static/js/main.6e39527f.js"
+  ]
+}
